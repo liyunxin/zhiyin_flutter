@@ -34,6 +34,6 @@ class _DancePageState extends State<DancePage> {
   }
 
   void _showTalent() {
-    Navigator.pushNamed(context, DYRoute.rap);
+    DYRoute().pushNamed(context, DYRoute.rap);
   }
 }

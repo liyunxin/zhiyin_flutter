@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:zhiyin_flutter/routes/Routes.dart';
 
 class SingPage extends StatefulWidget {
@@ -9,6 +10,14 @@ class SingPage extends StatefulWidget {
 }
 
 class _SingPageState extends State<SingPage> {
+  late MethodChannel _channel;
+
+  @override
+  void initState() {
+    super.initState();
+    _channel = const MethodChannel('multiple-flutters');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,6 +43,8 @@ class _SingPageState extends State<SingPage> {
   }
 
   void _showTalent() {
-    Navigator.pushNamed(context, DYRoute.dance);
+    //_channel.invokeMethod<void>("jumpScheme", DYRoute.dance);
+    DYRoute().pushNamed(context, DYRoute.dance);
+    //Navigator.pushNamed(context, DYRoute.dance);
   }
 }

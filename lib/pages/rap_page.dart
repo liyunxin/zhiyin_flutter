@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:zhiyin_flutter/routes/Routes.dart';
 
 class RapPage extends StatefulWidget {
@@ -34,10 +35,6 @@ class _RapPageState extends State<RapPage> {
   }
 
   void _showTalent() {
-    Navigator.pushNamed(
-      context,
-      DYRoute.basketball,
-      arguments: {'text': '一个真正的Man，哎哟你干嘛～\n喜欢我的话，就请多多支持我吧～～'},
-    );
+    DYRoute().pushNamed(context, DYRoute.basketball);
   }
 }
